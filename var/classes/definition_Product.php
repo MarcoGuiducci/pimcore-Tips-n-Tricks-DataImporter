@@ -5,6 +5,8 @@
  * Variants: no
  *
  * Fields Summary:
+ * - sku [input]
+ * - title [textarea]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -14,7 +16,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1698765152,
+   'modificationDate' => 1698765838,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -43,6 +45,110 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'datatype' => 'layout',
      'children' => 
     array (
+      0 => 
+      \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
+         'name' => 'Product Data',
+         'type' => NULL,
+         'region' => NULL,
+         'title' => 'Product Data',
+         'width' => '',
+         'height' => '',
+         'collapsible' => false,
+         'collapsed' => false,
+         'bodyStyle' => '',
+         'datatype' => 'layout',
+         'children' => 
+        array (
+          0 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+             'name' => 'Main Information',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => 'Main Information',
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => '',
+             'datatype' => 'layout',
+             'children' => 
+            array (
+              0 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'name' => 'sku',
+                 'title' => 'Sku',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'defaultValue' => NULL,
+                 'columnLength' => 190,
+                 'regex' => '',
+                 'regexFlags' => 
+                array (
+                ),
+                 'unique' => false,
+                 'showCharCount' => false,
+                 'width' => '',
+                 'defaultValueGenerator' => '',
+              )),
+              1 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+                 'name' => 'title',
+                 'title' => 'Title',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'maxLength' => NULL,
+                 'showCharCount' => false,
+                 'excludeFromSearchIndex' => false,
+                 'height' => 75,
+                 'width' => 350,
+              )),
+            ),
+             'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'fieldtype' => 'panel',
+             'layout' => NULL,
+             'border' => false,
+             'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
+          )),
+        ),
+         'locked' => false,
+         'blockedVarsForExport' => 
+        array (
+        ),
+         'fieldtype' => 'tabpanel',
+         'border' => false,
+         'tabPosition' => 'top',
+      )),
     ),
      'locked' => false,
      'blockedVarsForExport' => 

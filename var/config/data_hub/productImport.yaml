@@ -2,12 +2,97 @@ pimcore_data_hub:
     configurations:
         productImport:
             general:
+                active: true
                 type: dataImporterDataObject
-                path: null
                 name: productImport
-                modificationDate: 1698762831
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1698765799
                 createDate: 1698762831
-            workspaces: {  }
+            loaderConfig:
+                type: asset
+                settings:
+                    assetPath: '/Product Import/productImportExample.csv'
+            interpreterConfig:
+                type: csv
+                settings:
+                    skipFirstRow: true
+                    delimiter: ;
+                    enclosure: '"'
+                    escape: \
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: product
+                loadingStrategy:
+                    type: attribute
+                    settings:
+                        dataSourceIndex: '0'
+                        attributeName: sku
+                        language: ''
+                        includeUnpublished: true
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /Products
+                locationUpdateStrategy:
+                    type: noChange
+                publishingStrategy:
+                    type: noChangePublishNew
+            processingConfig:
+                executionType: sequential
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: SKU
+                    dataSourceIndex:
+                        - '0'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: sku
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: Title
+                    dataSourceIndex:
+                        - '1'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: title
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    settings:
+                        caseConversion: ucwords
+                    transformationPipeline:
+                        -
+                            settings:
+                                caseConversion: ucwords
+                            type: caseConversion
+                -
+                    label: 'Object Key'
+                    dataSourceIndex:
+                        - '0'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+            executionConfig:
+                scheduleType: recurring
+                cronDefinition: ''
+                scheduledAt: ''
             permissions:
                 user: {  }
                 role: {  }
+            workspaces: {  }
